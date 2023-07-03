@@ -1,0 +1,6 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <input type="text" class="border w-full py-2 px-4 mb-2" placeholder="Product name" formControlName="title" (input)="inputChange()" appFocus>
+
+    <p *ngIf="title.errors && title.errors.minlength && title.touched" class="text-red-600 font-medium mb-2">Validation error! (MinLength have to be more than 5)</p>
+    <button type="submit" class="border bg-blue-600 py-2 px-4 text-white">Create product</button>
+</form>
